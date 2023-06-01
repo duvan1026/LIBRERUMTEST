@@ -1,0 +1,51 @@
+﻿@model VentaModel
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Crear Venta
+    </div>
+    <div class="card-body">
+
+        <form asp-action="Guardar" asp-controller="Venta" method="post">
+            <div class="mb-3">
+                <label  class="form-label">CodigoVenta</label>
+                <input asp-for="CodigoVenta" type="text" class="form-control"  >
+                <span asp-validation-for="CodigoVenta" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">CodigoProducto</label>
+                <input asp-for="CodigoProducto" type="text" class="form-control"  >
+                <span asp-validation-for="CodigoProducto" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">FechaVenta</label>
+                <input asp-for="FechaVenta" type="text" class="form-control">
+                <span asp-validation-for="FechaVenta" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PuntoVenta</label>
+                <input asp-for="PuntoVenta" type="text" class="form-control">
+                <span asp-validation-for="PuntoVenta" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">CedulaCliente</label>
+                <input asp-for="ClienteModel.Cedula" type="text" class="form-control">
+                <span asp-validation-for="ClienteModel.Cedula" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Total</label>
+                <input asp-for="Total" type="text" class="form-control">
+                <span asp-validation-for="Total" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar"  asp-controller="Venta"  class="btn btn-warning">Volver a la lista</a>
+        </form>
+
+    </div>
+</div>
+
+
